@@ -1,0 +1,443 @@
+/*
+ Theme Name:   Peixe
+ Description:  swwell Child Theme
+ Author:       maeda
+ Template:     swell
+ Version:      1.0.0
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  twenty-fifteen-child
+*/
+
+body {
+  font-family: "Kiwi Maru", serif;
+}
+/* PCハンバーガーメニュー */
+/* ヘッダーを固定 */
+@media (min-width: 960px) {
+  .l-header {
+    position: fixed!important;
+    background: transparent;
+  }
+  .p-breadcrumb {
+    margin-top: calc(var(--logo_size_pc) + 32px);
+  }
+}
+/* 下層ページのヘッダー幅をトップに合わせる */
+.l-header .l-container {
+  max-width: 100%!important;
+}
+/* ヘッダーメニューを非表示 */
+nav#gnav {
+  display: none;
+}
+
+.l-header__menuBtn.sp_ {
+  display: block!important; /* ハンバーガーボタンを表示 */
+}
+.-series .l-header__inner {
+  align-items: center;  /* ハンバーガーボタンの上下位置調整 */
+}
+.p-spMenu {
+  display: block; /* 開閉メニューを有効 */
+}
+
+/* カルーセル */
+.mainvisual .swiper-container {
+  width: 100%;
+  height: 100%!important;
+  overflow: hidden;
+  border-radius: 10px 0 0 10px;
+}
+
+/* メインビジュアル */
+.logo-wrapper {
+  border-radius: 0 5px 5px 0;
+  margin-right: -50px;
+}
+
+.swiper-slide img{
+  width: 100%;
+  height: auto;
+}
+
+.mainvisual {
+  overflow-x: hidden;
+}
+
+.mainvisual-flex-left {
+  z-index: 2;
+}
+
+.mainvisual .l-container {
+  padding: 0;
+  max-width: none;
+}
+
+@media screen and (min-width: 960px) {
+  .p-mainVisual__inner {
+      height: 80vh;
+      min-height: 700px;
+  }
+
+  .-series-right .c-gnavWrap {
+    position: fixed;
+    top: 100px;
+    right: 50px;
+  }
+
+  .c-gnav {
+    flex-direction: column;
+  }
+
+  .c-gnav .menu-item {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .c-gnav .menu-item:hover {
+    border: none;
+  }
+
+  .c-gnav .menu-item::after {
+    display: none;
+  }
+}
+
+.mainvisual .swiper-slide {
+  width: 100%!important;
+  height: auto!important;
+  overflow: visible;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+/* 取り扱い生物カルーセル */
+.living-things {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.living-things swiper--wrapper {
+  /* wrapperのサイズを調整 */
+  width: 100%;
+  height: 300px;
+  padding: 80px 0!important;
+}
+
+.living-things .swiper {
+  /* display: flex; */
+  position: static!important;
+  width: 100%;
+  margin: auto;
+  padding: 80px 0!important;
+}
+
+.living-things .more-button {
+  width: 20%;
+  height: 150px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  border: 5px solid #5A9F4D;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.living-things .more-button a {
+  color: #5A9F4D;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+  padding: 25% 0;
+  transition: all .3s;
+}
+
+.living-things .more-button a:hover {
+  opacity: 0.5;
+}
+
+.living-things .swiper-slide {
+  /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+  color: #ffffff;
+  /* width: 20%!important; */
+	/* min-width: 230px; */
+  /* height: 150px!important; */
+  /* background-color: #fff; */
+  text-align: center;
+  /* margin-right: 10px; */
+  /* border-radius: 8px; */
+  /* overflow: hidden; */
+  position: relative;
+}
+
+.living-things .swiper-slide .slide-item {
+  height: 150px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.living-things .swiper-slide a {
+  color: #FFF;
+  transition: all .3s;
+}
+
+.living-things .swiper-slide a:hover {
+  opacity: 0.8;
+}
+
+.living-things .swiper-slide p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.living-things .swiper-slide img {
+  width: auto;
+	/* height: 100%; */
+	display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* 前への矢印 */
+.living-things .swiper-button-prev {
+  left: -50px;
+}
+/* 次への矢印 */
+.living-things .swiper-button-next {
+  right: -50px;
+}
+
+.living-things .swiper-button-next, .swiper-button-prev {
+  color: #5A9F4D!important;
+}
+
+/* トップページ */
+@media (min-width: 1108px) {
+  .alignwide {
+    left: -25%;
+    width: 150%;
+  }
+}
+
+.top-richcolumn .swell-block-columns__inner{
+  justify-content: space-between;
+}
+
+#main_content .heading-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#main_content .heading-wrapper .heading {
+  background-color: transparent;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  display: inline-block;
+  font-size: 48px;
+  color: #282D27!important;
+  text-align: center;
+}
+
+#main_content .heading-wrapper .white {
+  color: #FFF!important;
+}
+
+#main_content .heading-wrapper .heading::before {
+  display: none;
+}
+
+.heading::after {
+  content: attr(data-en);
+  padding-top: 10px;
+  display: block;
+  color: #5A9F4D;
+  font-size: 24px;
+  border-top: 2px solid #5A9F4D;
+}
+
+.top #content {
+  margin-top: -65px;
+}
+
+.news-top {
+  border-radius: 9999px;
+  padding: 0!important;
+  border: 8px solid #5A9F4D;
+}
+
+.news-top .p-postList.-type-simple {
+  border: none;
+}
+
+.news-top .-type-simple .p-postList__link {
+  border: none;
+  padding-left: 50px;
+}
+
+.news-list {
+  border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+  .p-mainVisual.-margin-on {
+    padding-top: 80px;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 960px) {
+  .p-mainVisual {
+    margin-top: 50px;
+  }
+
+  .logo-wrap {
+    width: 50%;
+    background-color: #5A9F4D;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .logo-wrap img {
+    width: 70%;
+  }
+
+  .mainvisual {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .mainvisual swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainvisual .swiper-wrapper {
+    position: absolute;
+  }
+
+  .mainvisual .swiper-slide img {
+    height: 80vh;
+    width: auto;
+    max-width: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .top-news {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 90%;
+  }
+
+  .top-news img {
+    width: 100%;
+  }
+
+  .news-top .-type-simple .p-postList__link {
+		padding: 5px 30px;
+  }
+
+	.news-top {
+		width: 90%;
+		margin: auto;
+	}
+
+	.top #content {
+		margin: -45px 20px 0;
+	}
+
+	#main_content .heading-wrapper .heading {
+		font-size: 24px;
+	}
+
+	#main_content .heading-wrapper .heading::after {
+		font-size: 12px;
+	}
+
+	#main_content .l-mainContent__inner .post_content .swell-block-fullWide .l-container.swell-block-fullWide .l-container .living-things {
+		width: 90%;
+		position: relative;
+		margin-bottom: 50px;
+		margin-top: 15px!important;
+	}
+
+	.living-things .swiper {
+		padding: 0 0 0 0!important;
+	}
+
+  .living-things .swiper-slide .slide-item {
+    height: 120px;
+  }
+
+	.living-things .swiper-slide p {
+		font-size: 15px;
+	}
+
+	.swiper-button-next, .swiper-button-prev {
+		padding: 30px;
+	}
+
+	.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+		bottom: -30px!important;
+	}
+
+	/* 前への矢印 */
+.living-things .swiper-button-prev {
+  left: 0px;
+}
+/* 次への矢印 */
+.living-things .swiper-button-next {
+  right: 0px;
+}
+}
+
+.-height-full .p-mainVisual__slide, .-height-set .p-mainVisual__slide {
+  border: solid #5A9F4D 8px;
+  border-radius: 15px;
+}
